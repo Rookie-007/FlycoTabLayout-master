@@ -9,7 +9,8 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.flyco.tablayout.R;
+import com.example.flycotablayout.R;
+
 
 /** 用于需要圆角矩形框背景的TextView的情况,减少直接使用TextView时引入的shape资源文件 */
 public class MsgView extends TextView {

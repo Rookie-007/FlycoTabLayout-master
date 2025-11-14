@@ -2,13 +2,15 @@
 apply from: 'dependencies.gradle'
 
 buildscript {
+    ext.kotlin_version = '1.8.22'  // 确保这里是最新版本
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.android.tools.build:gradle:8.3.0'
         classpath 'com.vanniktech:gradle-maven-publish-plugin:0.18.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

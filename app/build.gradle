@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
+    compileSdkVersion 34
+    buildToolsVersion "34.0.0" // 可选，建议和 SDK 匹配
+    namespace "com.flyco.tablayoutsamples"
     defaultConfig {
         applicationId "com.flyco.tablayoutsamples"
-        minSdkVersion rootProject.ext.minSdkVersion
+        minSdk 21
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
@@ -18,12 +18,19 @@ android {
         }
     }
 }
-
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation support.appcompat
-    implementation support.v4
-    implementation support.design
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'com.google.android.material:material:1.9.0'
+
     implementation project(':FlycoTabLayout_Lib')
 //    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
 }
