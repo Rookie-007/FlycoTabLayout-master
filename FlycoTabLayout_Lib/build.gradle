@@ -26,7 +26,14 @@ publishing {
     publications {
         myLibrary(MavenPublication) {
             afterEvaluate {
-                from components.findByName("release") ?: components.findByName("debug")
+                // 确保 release 组件存在
+                def releaseComponent = components.findByName("release")
+                if (releaseComponent != null) {
+                    from releaseComponent
+                } else {
+                    println "⚠️ Release component not found, fallback to debug"
+                    from components.findByName("debug")
+                }
             }
             groupId = 'com.github.Rookie-007'
             artifactId = 'FlycoTabLayout-master'
@@ -34,6 +41,7 @@ publishing {
         }
     }
 }
+
 
 dependencies {
     implementation 'androidx.fragment:fragment:1.8.9'
