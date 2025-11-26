@@ -1,112 +1,113 @@
-依赖配置
+# FlycoTabLayout
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FlycoTabLayout-green.svg?style=true)](https://android-arsenal.com/details/1/2756)
+#### [中文版](https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md)
+An Android TabLayout Lib has 3 kinds of TabLayout at present.
 
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.Rookie-007:FlycoTabLayout-master:3.6.0'
-}
-
-
-新增功能
-
-在原有 FlycoTabLayout-master 基础上，支持单独配置选中/未选中 tab 的字体大小和颜色：
-
-tl:tl_selectSize="20dp" → 选中 tab 字体大小
-
-tl:tl_unselectSize="10dp" → 未选中 tab 字体大小
-
-示例使用
-
-<com.flyco.tablayout.SlidingTabLayout
-    android:id="@+id/tl_1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#666666"
-    android:paddingBottom="15dp"
-    android:paddingTop="15dp"
-    tl:tl_selectSize="20dp"
-    tl:tl_unselectSize="10dp"
-    tl:tl_indicator_gravity="TOP"
-    tl:tl_textBold="SELECT"
-    tl:tl_underline_color="#1A000000"
-    tl:tl_underline_gravity="TOP"
-    tl:tl_underline_height="1dp"/>
-
-
-我可以帮你把整个 README 风格化成类似官方库的文档格式，让使用方法、属性说明、示例代码分段清楚，方便直接发布。
-
-你希望我帮你做吗？
-
-你说：
-做
-ChatGPT 说：
-
-好的，我帮你把 README/文档整理成清晰、易读、发布级别的格式，包含依赖、功能说明、属性说明、示例代码。下面是一个完整示例：
-
-FlycoTabLayout-master
-
-在原有 FlycoTabLayout-master 的基础上，新增了 选中/未选中 Tab 字体大小和颜色单独配置 功能。
-
-📦 依赖
-
-在项目 build.gradle 中添加 JitPack 仓库和依赖：
-
-repositories {
-    maven { url 'https://jitpack.io' }
-}
-
-dependencies {
-    implementation 'com.github.Rookie-007:FlycoTabLayout-master:3.6.0'
-}
-
-✨ 新增功能
-
-支持自定义 选中/未选中 Tab 字体大小和颜色：
-
-属性	类型	说明
-tl:tl_selectSize	dimension	选中 Tab 字体大小，例如 20dp
-tl:tl_unselectSize	dimension	未选中 Tab 字体大小，例如 10dp
-tl:tl_selectColor	color	选中 Tab 字体颜色
-tl:tl_unselectColor	color	未选中 Tab 字体颜色
-
-注意：其他原有属性依然支持，例如下划线、加粗等。
-
-🛠 使用示例
-<com.flyco.tablayout.SlidingTabLayout
-    android:id="@+id/tl_1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#666666"
-    android:paddingBottom="15dp"
-    android:paddingTop="15dp"
+* SlidingTabLayout: deeply modified from [PagerSlidingTabStrip](https://github.com/jpardogo/PagerSlidingTabStrip).
+    * new added attribute
+    * new added kinds of indicators
+    * new added unread msg tip
+    * new added method for convenience
     
-    tl:tl_selectSize="20dp"
-    tl:tl_unselectSize="10dp"
-    tl:tl_selectColor="#FF0000"
-    tl:tl_unselectColor="#CCCCCC"
+    ```java
+        /** no need to set titles in adapter */
+        public void setViewPager(ViewPager vp, String[] titles)
+        
+        /** no need to initialize even adapter */
+        public void setViewPager(ViewPager vp, String[] titles, FragmentActivity fa, ArrayList<Fragment> fragments) 
+    ```
+
+* CommonTabLayout:unlike SlidingTabLayout's dependence on ViewPager,it is a tabLayout without dependence on ViewPager and 
+can be used freely with other widgets together.
+    * support kinds of indicators and indicator animation
+    * support unread msg tip
+    * support icon and icon gravity.
+    * new added method for convenience
     
-    tl:tl_indicator_gravity="TOP"
-    tl:tl_textBold="SELECT"
-    tl:tl_underline_color="#1A000000"
-    tl:tl_underline_gravity="TOP"
-    tl:tl_underline_height="1dp"/>
+    ```java
+        /** support switch fragments itself */
+        public void setTabData(ArrayList<CustomTabEntity> tabEntitys, FragmentManager fm, int containerViewId, ArrayList<Fragment> fragments)
+    ```
 
-📖 属性说明（常用）
+* SegmentTabLayout
 
-tl:tl_selectSize → 选中字体大小
+## Demo
+![](https://github.com/H07000223/FlycoTabLayout/blob/master/preview_1.gif)
 
-tl:tl_unselectSize → 未选中字体大小
+![](https://github.com/H07000223/FlycoTabLayout/blob/master/preview_2.gif)
 
-tl:tl_selectColor → 选中字体颜色
+![](https://github.com/H07000223/FlycoTabLayout/blob/master/preview_3.gif)
 
-tl:tl_unselectColor → 未选中字体颜色
 
-tl:tl_textBold → 文字加粗方式（SELECT, ALL 等）
+## Change Log
 
-tl:tl_indicator_gravity → 指示器位置（TOP, BOTTOM）
+ > 3.0.0 (2021-09-30)
+   - upgrade to AndroidX
+   - publish on Maven Central
 
-tl:tl_underline_color → 下划线颜色
 
-tl:tl_underline_height → 下划线高度
+## Gradle
+
+```groovy
+// AndroidX
+dependencies {
+   implementation 'com.github.Rookie-007:FlycoTabLayout-master:3.6.0'
+}
+
+```
+
+  新增属性  选中和未选中字体大小  tl_selectSize  和 tl_unselectSize
+  ##示例如下：
+  <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tl_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#666666"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                tl:tl_selectSize="20dp"
+                tl:tl_unselectSize="10dp"
+                tl:tl_indicator_gravity="TOP"
+                tl:tl_textBold="SELECT"
+                tl:tl_underline_color="#1A000000"
+                tl:tl_underline_gravity="TOP"
+                tl:tl_underline_height="1dp"/>
+
+```
+## Attributes
+
+|name|format|description|
+|:---:|:---:|:---:|
+| tl_indicator_color | color |set indicator color
+| tl_indicator_height | dimension |set indicator height
+| tl_indicator_width | dimension |set indicator width
+| tl_indicator_margin_left | dimension |set indicator margin,invalid when indicator width is greater than 0.
+| tl_indicator_margin_top | dimension |set indicator margin,invalid when indicator width is greater than 0.
+| tl_indicator_margin_right | dimension |set indicator margin,invalid when indicator width is greater than 0.
+| tl_indicator_margin_bottom | dimension |set indicator margin,invalid when indicator width is greater than 0.
+| tl_indicator_corner_radius | dimension |set indicator corner radius
+| tl_indicator_gravity | enum |set indicator gravity TOP or BOTTOM.
+| tl_indicator_style | enum |set indicator style NORMAL or TRIANGLE or BLOCK
+| tl_underline_color | color |set underline color
+| tl_underline_height | dimension |set underline height
+| tl_underline_gravity | enum |set underline gravity TOP or BOTTOM
+| tl_divider_color | color |set divider color
+| tl_divider_width | dimension |set divider width
+| tl_divider_padding |dimension| set divider paddingTop and paddingBottom
+| tl_tab_padding |dimension| set tab paddingLeft and paddingRight
+| tl_tab_space_equal |boolean| set tab space equal
+| tl_tab_width |dimension| set tab width
+| tl_textsize |dimension| set text size
+| tl_textSelectColor |color| set text select color
+| tl_textUnselectColor |color|  set text unselect color
+| tl_textBold |boolean| set text is bold 
+| tl_iconWidth |dimension| set icon width(only for CommonTabLayout)
+| tl_iconHeight |dimension|set icon height(only for CommonTabLayout)
+| tl_iconVisible |boolean| set icon is visible(only for CommonTabLayout)
+| tl_iconGravity |enum| set icon gravity LEFT or TOP or RIGHT or BOTTOM(only for CommonTabLayout)
+| tl_iconMargin |dimension| set icon margin with text(only for CommonTabLayout)
+| tl_indicator_anim_enable |boolean| set indicator support animation(only for CommonTabLayout)
+| tl_indicator_anim_duration |integer| set indicator animation duration(only for CommonTabLayout)
+| tl_indicator_bounce_enable |boolean| set indicator aniamtion with bounce effect(only for CommonTabLayout)
+| tl_indicator_width_equal_title |boolean| set indicator width same as text(only for SlidingTabLayout)
+
