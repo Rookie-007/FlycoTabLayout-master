@@ -26,7 +26,6 @@ publishing {
     publications {
         myLibrary(MavenPublication) {
             afterEvaluate {
-                // 确保 release 组件存在
                 def releaseComponent = components.findByName("release")
                 if (releaseComponent != null) {
                     from releaseComponent
@@ -35,12 +34,14 @@ publishing {
                     from components.findByName("debug")
                 }
             }
+
             groupId = 'com.github.Rookie-007'
             artifactId = 'FlycoTabLayout-master'
-            version = '3.2.0'
+            version = '3.2.1'
         }
     }
 }
+
 
 
 dependencies {
