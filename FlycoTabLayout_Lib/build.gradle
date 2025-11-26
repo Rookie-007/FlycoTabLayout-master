@@ -20,38 +20,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
 }
 
 publishing {
     publications {
         myLibrary(MavenPublication) {
             afterEvaluate {
-                def releaseComponent = components.findByName("release")
-                if (releaseComponent != null) {
-                    from releaseComponent
-                } else {
-                    println "⚠️ Release component not found, fallback to debug"
-                    from components.findByName("debug")
-                }
+                from components.release
             }
 
             groupId = 'com.github.Rookie-007'
             artifactId = 'FlycoTabLayout-master'
-            version = '3.3.0'
+            version = '3.6.0'
         }
     }
 }
 
-
-
 dependencies {
     implementation 'androidx.fragment:fragment:1.8.9'
-
-    configurations.all {
-        resolutionStrategy {
-            force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
-            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
-            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
-        }
-    }
 }
