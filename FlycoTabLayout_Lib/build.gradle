@@ -32,9 +32,9 @@ publishing {
                 from components.findByName("release")
             }
 
-            groupId = 'com.xxx' // 自己的包名
-            artifactId = 'FlycoTabLayout'
-            version = '1.0.0'
+            groupId = 'com.github.Rookie-007'
+            artifactId = 'FlycoTabLayout-master'
+            version = '3.1.0'
         }
     }
 }
