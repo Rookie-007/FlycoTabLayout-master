@@ -16,30 +16,28 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled = false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 publishing {
     publications {
-        // 改名为 myLibrary 或任意名字
         myLibrary(MavenPublication) {
-            // 用这个代替 components.release
             afterEvaluate {
-                from components.findByName("release")
+                from components.findByName("release") ?: components.findByName("debug")
             }
-
             groupId = 'com.github.Rookie-007'
             artifactId = 'FlycoTabLayout-master'
-            version = '3.1.0'
+            version = '3.2.0'
         }
     }
 }
+
 dependencies {
     implementation 'androidx.fragment:fragment:1.8.9'
+
     configurations.all {
         resolutionStrategy {
             force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
