@@ -37,7 +37,7 @@ publishing {
 
             groupId = 'com.github.Rookie-007'
             artifactId = 'FlycoTabLayout-master'
-            version = '3.6.0'
+            version = '3.6.1'
         }
     }
 }
