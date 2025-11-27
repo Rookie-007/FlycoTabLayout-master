@@ -66,78 +66,78 @@ public class CommonTabActivity extends AppCompatActivity {
         mViewPager = ViewFindUtils.find(mDecorView, R.id.vp_2);
         mViewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         /** with nothing */
-        mTabLayout_1 = ViewFindUtils.find(mDecorView, R.id.tl_1);
-        /** with ViewPager */
-        mTabLayout_2 = ViewFindUtils.find(mDecorView, R.id.tl_2);
-        /** with Fragments */
-        mTabLayout_3 = ViewFindUtils.find(mDecorView, R.id.tl_3);
-        /** indicator固定宽度 */
-        mTabLayout_4 = ViewFindUtils.find(mDecorView, R.id.tl_4);
+//        mTabLayout_1 = ViewFindUtils.find(mDecorView, R.id.tl_1);
+//        /** with ViewPager */
+//        mTabLayout_2 = ViewFindUtils.find(mDecorView, R.id.tl_2);
+//        /** with Fragments */
+//        mTabLayout_3 = ViewFindUtils.find(mDecorView, R.id.tl_3);
+//        /** indicator固定宽度 */
+//        mTabLayout_4 = ViewFindUtils.find(mDecorView, R.id.tl_4);
         /** indicator固定宽度 */
         mTabLayout_5 = ViewFindUtils.find(mDecorView, R.id.tl_5);
-        /** indicator矩形圆角 */
-        mTabLayout_6 = ViewFindUtils.find(mDecorView, R.id.tl_6);
-        /** indicator三角形 */
-        mTabLayout_7 = ViewFindUtils.find(mDecorView, R.id.tl_7);
-        /** indicator圆角色块 */
-        mTabLayout_8 = ViewFindUtils.find(mDecorView, R.id.tl_8);
-
-        mTabLayout_1.setTabData(mTabEntities);
-        tl_2();
-        mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_change, mFragments2);
-        mTabLayout_4.setTabData(mTabEntities);
+//        /** indicator矩形圆角 */
+//        mTabLayout_6 = ViewFindUtils.find(mDecorView, R.id.tl_6);
+//        /** indicator三角形 */
+//        mTabLayout_7 = ViewFindUtils.find(mDecorView, R.id.tl_7);
+//        /** indicator圆角色块 */
+//        mTabLayout_8 = ViewFindUtils.find(mDecorView, R.id.tl_8);
+//
+//        mTabLayout_1.setTabData(mTabEntities);
+//        tl_2();
+//        mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_change, mFragments2);
+//        mTabLayout_4.setTabData(mTabEntities);
         mTabLayout_5.setTabData(mTabEntities);
-        mTabLayout_6.setTabData(mTabEntities);
-        mTabLayout_7.setTabData(mTabEntities);
-        mTabLayout_8.setTabData(mTabEntities);
-
-        mTabLayout_3.setOnTabSelectListener(new OnTabSelectListener() {
-            @Override
-            public void onTabSelect(int position) {
-                mTabLayout_1.setCurrentTab(position);
-                mTabLayout_2.setCurrentTab(position);
-                mTabLayout_4.setCurrentTab(position);
-                mTabLayout_5.setCurrentTab(position);
-                mTabLayout_6.setCurrentTab(position);
-                mTabLayout_7.setCurrentTab(position);
-                mTabLayout_8.setCurrentTab(position);
-            }
-
-            @Override
-            public void onTabReselect(int position) {
-
-            }
-        });
-        mTabLayout_8.setCurrentTab(2);
-        mTabLayout_3.setCurrentTab(1);
-
-        //显示未读红点
-        mTabLayout_1.showDot(2);
-        mTabLayout_3.showDot(1);
-        mTabLayout_4.showDot(1);
-
-        //两位数
-        mTabLayout_2.showMsg(0, 55);
-        mTabLayout_2.setMsgMargin(0, -5, 5);
-
-        //三位数
-        mTabLayout_2.showMsg(1, 100);
-        mTabLayout_2.setMsgMargin(1, -5, 5);
-
-        //设置未读消息红点
-        mTabLayout_2.showDot(2);
-        MsgView rtv_2_2 = mTabLayout_2.getMsgView(2);
-        if (rtv_2_2 != null) {
-            UnreadMsgUtils.setSize(rtv_2_2, dp2px(7.5f));
-        }
-
-        //设置未读消息背景
-        mTabLayout_2.showMsg(3, 5);
-        mTabLayout_2.setMsgMargin(3, 0, 5);
-        MsgView rtv_2_3 = mTabLayout_2.getMsgView(3);
-        if (rtv_2_3 != null) {
-            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
-        }
+//        mTabLayout_6.setTabData(mTabEntities);
+//        mTabLayout_7.setTabData(mTabEntities);
+//        mTabLayout_8.setTabData(mTabEntities);
+//
+//        mTabLayout_3.setOnTabSelectListener(new OnTabSelectListener() {
+//            @Override
+//            public void onTabSelect(int position) {
+//                mTabLayout_1.setCurrentTab(position);
+//                mTabLayout_2.setCurrentTab(position);
+//                mTabLayout_4.setCurrentTab(position);
+//                mTabLayout_5.setCurrentTab(position);
+//                mTabLayout_6.setCurrentTab(position);
+//                mTabLayout_7.setCurrentTab(position);
+//                mTabLayout_8.setCurrentTab(position);
+//            }
+//
+//            @Override
+//            public void onTabReselect(int position) {
+//
+//            }
+//        });
+//        mTabLayout_8.setCurrentTab(2);
+//        mTabLayout_3.setCurrentTab(1);
+//
+//        //显示未读红点
+//        mTabLayout_1.showDot(2);
+//        mTabLayout_3.showDot(1);
+//        mTabLayout_4.showDot(1);
+//
+//        //两位数
+//        mTabLayout_2.showMsg(0, 55);
+//        mTabLayout_2.setMsgMargin(0, -5, 5);
+//
+//        //三位数
+//        mTabLayout_2.showMsg(1, 100);
+//        mTabLayout_2.setMsgMargin(1, -5, 5);
+//
+//        //设置未读消息红点
+//        mTabLayout_2.showDot(2);
+//        MsgView rtv_2_2 = mTabLayout_2.getMsgView(2);
+//        if (rtv_2_2 != null) {
+//            UnreadMsgUtils.setSize(rtv_2_2, dp2px(7.5f));
+//        }
+//
+//        //设置未读消息背景
+//        mTabLayout_2.showMsg(3, 5);
+//        mTabLayout_2.setMsgMargin(3, 0, 5);
+//        MsgView rtv_2_3 = mTabLayout_2.getMsgView(3);
+//        if (rtv_2_3 != null) {
+//            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
+//        }
     }
 
     Random mRandom = new Random();

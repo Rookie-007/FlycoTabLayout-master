@@ -92,6 +92,8 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
     private float mTextsize;
     private int mTextSelectColor;
     private int mTextUnselectColor;
+    private int mTabSelectBgColor;
+    private int mTabUnSelectBgColor;
     private int mTextBold;
     private boolean mTextAllCaps;
 
@@ -161,6 +163,8 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mTextUnselectSize = ta.getDimension(R.styleable.SlidingTabLayout_tl_unselectSize, sp2px(14));
         mTextSelectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#AAffffff"));
+        mTabSelectBgColor = ta.getColor(R.styleable.SlidingTabLayout_tl_tabSelectBgColor, Color.parseColor("#ffffff"));
+        mTabUnSelectBgColor = ta.getColor(R.styleable.SlidingTabLayout_tl_tabUnSelectBgColor, Color.parseColor("#AAffffff"));
         mTextBold = ta.getInt(R.styleable.SlidingTabLayout_tl_textBold, TEXT_BOLD_NONE);
         mTextAllCaps = ta.getBoolean(R.styleable.SlidingTabLayout_tl_textAllCaps, false);
 
@@ -372,6 +376,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             TextView tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
 
             if (tab_title != null) {
+                tabView.setBackgroundColor(isSelect ? mTabSelectBgColor: mTabUnSelectBgColor);
                 tab_title.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
                 tab_title.setTextSize(TypedValue.COMPLEX_UNIT_SP,
                         isSelect ? mTextSelectSize : mTextUnselectSize);

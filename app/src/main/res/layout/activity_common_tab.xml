@@ -88,7 +88,7 @@
             tl:tl_iconVisible="false"
             tl:tl_indicator_corner_radius="2dp"
             tl:tl_indicator_height="4dp"
-            tl:tl_indicator_width="4dp"
+            tl:tl_indicator_width="100dp"
             tl:tl_textsize="14sp"/>
 
         <com.flyco.tablayout.CommonTabLayout

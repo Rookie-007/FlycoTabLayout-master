@@ -47,65 +47,65 @@ public class SlidingTabActivity extends AppCompatActivity {
         /** 默认 */
         SlidingTabLayout tabLayout_1 = ViewFindUtils.find(decorView, R.id.tl_1);
         /**自定义部分属性*/
-//        SlidingTabLayout tabLayout_2 = ViewFindUtils.find(decorView, R.id.tl_2);
-//        /** 字体加粗,大写 */
-//        SlidingTabLayout tabLayout_3 = ViewFindUtils.find(decorView, R.id.tl_3);
-//        /** tab固定宽度 */
-//        SlidingTabLayout tabLayout_4 = ViewFindUtils.find(decorView, R.id.tl_4);
-//        /** indicator固定宽度 */
-//        SlidingTabLayout tabLayout_5 = ViewFindUtils.find(decorView, R.id.tl_5);
-//        /** indicator圆 */
-//        SlidingTabLayout tabLayout_6 = ViewFindUtils.find(decorView, R.id.tl_6);
-//        /** indicator矩形圆角 */
-//        final SlidingTabLayout tabLayout_7 = ViewFindUtils.find(decorView, R.id.tl_7);
-//        /** indicator三角形 */
-//        SlidingTabLayout tabLayout_8 = ViewFindUtils.find(decorView, R.id.tl_8);
-//        /** indicator圆角色块 */
-//        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(decorView, R.id.tl_9);
-//        /** indicator圆角色块 */
-//        SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
+        SlidingTabLayout tabLayout_2 = ViewFindUtils.find(decorView, R.id.tl_2);
+        /** 字体加粗,大写 */
+        SlidingTabLayout tabLayout_3 = ViewFindUtils.find(decorView, R.id.tl_3);
+        /** tab固定宽度 */
+        SlidingTabLayout tabLayout_4 = ViewFindUtils.find(decorView, R.id.tl_4);
+        /** indicator固定宽度 */
+        SlidingTabLayout tabLayout_5 = ViewFindUtils.find(decorView, R.id.tl_5);
+        /** indicator圆 */
+        SlidingTabLayout tabLayout_6 = ViewFindUtils.find(decorView, R.id.tl_6);
+        /** indicator矩形圆角 */
+        final SlidingTabLayout tabLayout_7 = ViewFindUtils.find(decorView, R.id.tl_7);
+        /** indicator三角形 */
+        SlidingTabLayout tabLayout_8 = ViewFindUtils.find(decorView, R.id.tl_8);
+        /** indicator圆角色块 */
+        SlidingTabLayout tabLayout_9 = ViewFindUtils.find(decorView, R.id.tl_9);
+        /** indicator圆角色块 */
+        SlidingTabLayout tabLayout_10 = ViewFindUtils.find(decorView, R.id.tl_10);
 
         tabLayout_1.setViewPager(vp);
-//        tabLayout_2.setViewPager(vp);
+        tabLayout_2.setViewPager(vp);
 //        tabLayout_2.setOnTabSelectListener(this);
-//        tabLayout_3.setViewPager(vp);
-//        tabLayout_4.setViewPager(vp);
-//        tabLayout_5.setViewPager(vp);
-//        tabLayout_6.setViewPager(vp);
-//        tabLayout_7.setViewPager(vp, mTitles);
-//        tabLayout_8.setViewPager(vp, mTitles, this, mFragments);
-//        tabLayout_9.setViewPager(vp);
-//        tabLayout_10.setViewPager(vp);
+        tabLayout_3.setViewPager(vp);
+        tabLayout_4.setViewPager(vp);
+        tabLayout_5.setViewPager(vp);
+        tabLayout_6.setViewPager(vp);
+        tabLayout_7.setViewPager(vp, mTitles);
+        tabLayout_8.setViewPager(vp, mTitles, this, mFragments);
+        tabLayout_9.setViewPager(vp);
+        tabLayout_10.setViewPager(vp);
 
-//        vp.setCurrentItem(4);
-//
-//        tabLayout_1.showDot(4);
-//        tabLayout_3.showDot(4);
-//        tabLayout_2.showDot(4);
+        vp.setCurrentItem(4);
 
-//        tabLayout_2.showMsg(3, 5);
-//        tabLayout_2.setMsgMargin(3, 0, 10);
-//        MsgView rtv_2_3 = tabLayout_2.getMsgView(3);
-//        if (rtv_2_3 != null) {
-//            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
-//        }
-//
-//        tabLayout_2.showMsg(5, 5);
-//        tabLayout_2.setMsgMargin(5, 0, 10);
+        tabLayout_1.showDot(4);
+        tabLayout_3.showDot(4);
+        tabLayout_2.showDot(4);
 
-//        tabLayout_7.setOnTabSelectListener(new OnTabSelectListener() {
-//            @Override
-//            public void onTabSelect(int position) {
-//                Toast.makeText(mContext, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onTabReselect(int position) {
-//                mFragments.add(SimpleCardFragment.getInstance("后端"));
-//                mAdapter.notifyDataSetChanged();
-//                tabLayout_7.addNewTab("后端");
-//            }
-//        });
+        tabLayout_2.showMsg(3, 5);
+        tabLayout_2.setMsgMargin(3, 0, 10);
+        MsgView rtv_2_3 = tabLayout_2.getMsgView(3);
+        if (rtv_2_3 != null) {
+            rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
+        }
+
+        tabLayout_2.showMsg(5, 5);
+        tabLayout_2.setMsgMargin(5, 0, 10);
+
+        tabLayout_7.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+                Toast.makeText(mContext, "onTabSelect&position--->" + position, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+                mFragments.add(SimpleCardFragment.getInstance("后端"));
+                mAdapter.notifyDataSetChanged();
+                tabLayout_7.addNewTab("后端");
+            }
+        });
     }
 
 //    @Override
